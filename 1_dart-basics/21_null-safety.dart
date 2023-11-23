@@ -1,3 +1,5 @@
+// ignore_for_file: unused_local_variable
+
 void main() {
   int nonNullable = 10; // this value can't be null
   // nonNullable = null; // error
@@ -12,7 +14,7 @@ void main() {
   int value =
       nullable!; // non null assertion operator, ensure dart this is not null by time
 
-  int value2 = nullable ?? 1; // 1 is default value if nullable is null
+  int value2 = nullable; // 1 is default value if nullable is null
 
   String? nullableString = null;
   int stringLength = nullableString?.length ??
