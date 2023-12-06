@@ -1,4 +1,5 @@
 import 'package:basics/08_widget_layout-builder.dart';
+import 'package:basics/presentation/components/custom_button.dart';
 import 'package:basics/presentation/widget_examples/widgets/another_picture.dart';
 import 'package:basics/presentation/widget_examples/widgets/button_examples.dart';
 import 'package:basics/presentation/widget_examples/widgets/first_column_child.dart';
@@ -20,35 +21,57 @@ class WidgetExamplesScreen extends StatelessWidget {
         ),
         body: Container(
           color: Colors.white,
-          child: const SingleChildScrollView(
+          child: SingleChildScrollView(
             child: Column(
                 mainAxisSize: MainAxisSize.max,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  SizedBox(height: 20),
-                  RowExpandedExample(),
-                  SizedBox(
+                  const SizedBox(height: 20),
+                  const RowExpandedExample(),
+                  const SizedBox(
                     height: 20,
                   ),
-                  FirstColumnChild(),
-                  SizedBox(
+                  const FirstColumnChild(),
+                  const SizedBox(
                     height: 20,
                   ),
-                  HelloWorld(),
-                  SizedBox(
+                  const HelloWorld(),
+                  const SizedBox(
                     height: 20,
                   ),
-                  StevanusPicture(),
-                  SizedBox(
+                  const StevanusPicture(),
+                  const SizedBox(
                     height: 20,
                   ),
-                  AnotherPicture(),
-                  SizedBox(height: 40),
-                  MediaQueryExample(),
-                  SizedBox(height: 40),
-                  LayoutBuilderExample(),
-                  SizedBox(height: 40),
-                  ButtonExamples(),
+                  const AnotherPicture(),
+                  const SizedBox(height: 40),
+                  const MediaQueryExample(),
+                  const SizedBox(height: 40),
+                  const LayoutBuilderExample(),
+                  const SizedBox(height: 40),
+                  const ButtonExamples(),
+                  const SizedBox(height: 40),
+                  CustomButton(
+                    onTap: () {
+                      print('Tapped');
+                    },
+                    icon: Icons.home,
+                    iconColor: Colors.white,
+                  ),
+                  const SizedBox(height: 40),
+                  CustomButton(
+                    onTap: () {
+                      print('Tapped Button 2');
+                    },
+                    icon: Icons.play_arrow,
+                    iconColor: Colors.blue,
+                  ),
+                  const SizedBox(height: 40),
+                  CustomButtonGesture(
+                      onTap: () {
+                        print('Tapped Button Gesture');
+                      },
+                      text: "gesture button")
                 ]),
           ),
         ),
