@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 
-class ButtonExamples extends StatelessWidget {
+class ButtonExamples extends StatefulWidget {
   const ButtonExamples({super.key});
+
+  @override
+  State<ButtonExamples> createState() => _ButtonExamplesState();
+}
+
+class _ButtonExamplesState extends State<ButtonExamples> {
+  bool switchState = true;
 
   @override
   Widget build(BuildContext context) {
@@ -43,9 +50,14 @@ class ButtonExamples extends StatelessWidget {
             )),
 
         Switch(
-            value: true,
+            value: switchState,
             onChanged: (value) {
-              print(value);
+              // ? setState digunakan untuk mengubah state dari widget atau merender ulang widget, hanya saja ini tidak bagus untuk performa
+              // ? tapi jika ingin membuat untuk mengubah switch, maka harus menggunakan setState tapi harus dipisahkan widgetnya
+              setState(() {
+                switchState = value;
+                print(value);
+              });
             }),
 
         // ? Bisa juga dibuat dalam bentuk container
