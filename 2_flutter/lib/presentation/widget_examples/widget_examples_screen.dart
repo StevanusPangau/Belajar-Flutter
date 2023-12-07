@@ -5,6 +5,7 @@ import 'package:basics/presentation/widget_examples/widgets/button_examples.dart
 import 'package:basics/presentation/widget_examples/widgets/first_column_child.dart';
 import 'package:basics/presentation/widget_examples/widgets/hello_world.dart';
 import 'package:basics/presentation/widget_examples/widgets/layout_builder_example.dart';
+import 'package:basics/presentation/widget_examples/widgets/person.dart';
 import 'package:basics/presentation/widget_examples/widgets/row_expanded_example.dart';
 import 'package:basics/presentation/widget_examples/widgets/stevanus_picture.dart';
 import 'package:flutter/material.dart';
@@ -39,7 +40,14 @@ class WidgetExamplesScreen extends StatelessWidget {
                   const SizedBox(
                     height: 20,
                   ),
-                  const StevanusPicture(),
+                  // const StevanusPicture(),
+                  const Person(
+                      pictureUrl:
+                          "https://media.licdn.com/dms/image/C5603AQHZpsvZV9mynA/profile-displayphoto-shrink_800_800/0/1634817830127?e=1707350400&v=beta&t=KS8qOqOQ0l9h8cz41IUzZcuqAmVq3zGrD2CSNGbqSIY",
+                      name: "Evan",
+                      age: "21",
+                      country: "Indonesia",
+                      job: "Software Engineer"),
                   const SizedBox(
                     height: 20,
                   ),
