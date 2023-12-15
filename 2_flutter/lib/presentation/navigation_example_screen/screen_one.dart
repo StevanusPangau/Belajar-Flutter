@@ -13,7 +13,9 @@ class ScreenOne extends StatelessWidget {
         body: Center(
             child: TextButton(
           onPressed: () {
-            Navigator.pop(context);
+            // route popUntil mirip dengan pop, namun popUntil akan pop sampai kondisi yang ditentukan
+            // bisa juga menggunakan pushReplacementNamed
+            Navigator.popUntil(context, (route) => route.isFirst);
           },
           child: const Text('Go Back'),
         )));

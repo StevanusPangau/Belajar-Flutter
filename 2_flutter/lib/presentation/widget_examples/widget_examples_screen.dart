@@ -1,7 +1,5 @@
 import 'package:basics/08_widget_layout-builder.dart';
 import 'package:basics/presentation/components/custom_button.dart';
-import 'package:basics/presentation/navigation_example_screen/screen_one.dart';
-import 'package:basics/presentation/navigation_example_screen/screen_two.dart';
 import 'package:basics/presentation/widget_examples/widgets/another_picture.dart';
 import 'package:basics/presentation/widget_examples/widgets/button_examples.dart';
 import 'package:basics/presentation/widget_examples/widgets/first_column_child.dart';
@@ -71,10 +69,7 @@ class WidgetExamplesScreen extends StatelessWidget {
                   const SizedBox(height: 40),
                   CustomButton(
                     onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const ScreenOne()));
+                      Navigator.pushNamed(context, '/screenOne');
                     },
                     icon: Icons.play_arrow,
                     iconColor: Colors.blue,
@@ -82,10 +77,7 @@ class WidgetExamplesScreen extends StatelessWidget {
                   const SizedBox(height: 40),
                   CustomButtonGesture(
                       onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const ScreenTwo()));
+                        Navigator.pushNamed(context, '/screenTwo');
                       },
                       text: "gesture button")
                 ]),

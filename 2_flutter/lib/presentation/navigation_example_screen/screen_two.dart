@@ -1,4 +1,3 @@
-import 'package:basics/presentation/navigation_example_screen/screen_one.dart';
 import 'package:flutter/material.dart';
 
 class ScreenTwo extends StatelessWidget {
@@ -14,9 +13,7 @@ class ScreenTwo extends StatelessWidget {
       body: Center(
           child: TextButton(
         onPressed: () {
-          // ? Navtion pushReplacement untuk mengganti halaman yang sedang ditampilkan jadi behavior rootnya itu seperti halaman pertama
-          Navigator.pushReplacement(context,
-              MaterialPageRoute(builder: (context) => const ScreenOne()));
+          Navigator.pushReplacementNamed(context, '/screenOne');
         },
         child: const Text('Go To Screen One'),
       )),
