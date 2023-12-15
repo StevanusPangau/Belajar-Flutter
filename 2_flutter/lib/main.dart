@@ -1,6 +1,7 @@
 import 'package:basics/12_route-buttom-navigation.dart';
 import 'package:basics/presentation/navigation_example_screen/screen_one.dart';
 import 'package:basics/presentation/navigation_example_screen/screen_two.dart';
+import 'package:basics/theme.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,7 +14,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        theme: ThemeData(appBarTheme: const AppBarTheme(color: Colors.blue)),
+        // ? gunakan themeMode untuk mengatur tema aplikasi jika ingin tes dark/light theme
+        // themeMode: ThemeMode.dark,
+        theme: AppTheme.lighTheme,
+        darkTheme: AppTheme.darkTheme,
         home: const RouteButtomNavigation(),
         // ? membuat route name
         routes: <String, WidgetBuilder>{

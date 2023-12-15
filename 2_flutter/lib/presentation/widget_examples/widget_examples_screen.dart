@@ -20,68 +20,65 @@ class WidgetExamplesScreen extends StatelessWidget {
           title: const Text('Flutter Basics'),
           backgroundColor: Colors.orange,
         ),
-        body: Container(
-          color: Colors.white,
-          child: SingleChildScrollView(
-            child: Column(
-                mainAxisSize: MainAxisSize.max,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  const SizedBox(height: 20),
-                  const RowExpandedExample(),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  const FirstColumnChild(),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  const HelloWorld(),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  // const StevanusPicture(),
-                  const Person(
-                      pictureUrl:
-                          "https://media.sproutsocial.com/uploads/2022/06/profile-picture.jpeg",
-                      name: "Evan",
-                      age: "21",
-                      country: "Indonesia",
-                      job: "Software Engineer"),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  const AnotherPicture(),
-                  const SizedBox(height: 40),
-                  const MediaQueryExample(),
-                  const SizedBox(height: 40),
-                  const LayoutBuilderExample(),
-                  const SizedBox(height: 40),
-                  const ButtonExamples(),
-                  const SizedBox(height: 40),
-                  CustomButton(
+        body: SingleChildScrollView(
+          child: Column(
+              mainAxisSize: MainAxisSize.max,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const SizedBox(height: 20),
+                const RowExpandedExample(),
+                const SizedBox(
+                  height: 20,
+                ),
+                const FirstColumnChild(),
+                const SizedBox(
+                  height: 20,
+                ),
+                const HelloWorld(),
+                const SizedBox(
+                  height: 20,
+                ),
+                // const StevanusPicture(),
+                const Person(
+                    pictureUrl:
+                        "https://media.sproutsocial.com/uploads/2022/06/profile-picture.jpeg",
+                    name: "Evan",
+                    age: "21",
+                    country: "Indonesia",
+                    job: "Software Engineer"),
+                const SizedBox(
+                  height: 20,
+                ),
+                const AnotherPicture(),
+                const SizedBox(height: 40),
+                const MediaQueryExample(),
+                const SizedBox(height: 40),
+                const LayoutBuilderExample(),
+                const SizedBox(height: 40),
+                const ButtonExamples(),
+                const SizedBox(height: 40),
+                CustomButton(
+                  onTap: () {
+                    print('Tapped');
+                  },
+                  icon: Icons.home,
+                  iconColor: Colors.white,
+                ),
+                const SizedBox(height: 40),
+                CustomButton(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/screenOne');
+                  },
+                  icon: Icons.play_arrow,
+                  iconColor: Colors.blue,
+                ),
+                const SizedBox(height: 40),
+                CustomButtonGesture(
                     onTap: () {
-                      print('Tapped');
+                      Navigator.pushNamed(context, '/screenTwo');
                     },
-                    icon: Icons.home,
-                    iconColor: Colors.white,
-                  ),
-                  const SizedBox(height: 40),
-                  CustomButton(
-                    onTap: () {
-                      Navigator.pushNamed(context, '/screenOne');
-                    },
-                    icon: Icons.play_arrow,
-                    iconColor: Colors.blue,
-                  ),
-                  const SizedBox(height: 40),
-                  CustomButtonGesture(
-                      onTap: () {
-                        Navigator.pushNamed(context, '/screenTwo');
-                      },
-                      text: "gesture button")
-                ]),
-          ),
+                    text: "gesture button")
+              ]),
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
