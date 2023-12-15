@@ -1,5 +1,7 @@
 import 'package:basics/08_widget_layout-builder.dart';
 import 'package:basics/presentation/components/custom_button.dart';
+import 'package:basics/presentation/navigation_example_screen/screen_one.dart';
+import 'package:basics/presentation/navigation_example_screen/screen_two.dart';
 import 'package:basics/presentation/widget_examples/widgets/another_picture.dart';
 import 'package:basics/presentation/widget_examples/widgets/button_examples.dart';
 import 'package:basics/presentation/widget_examples/widgets/first_column_child.dart';
@@ -7,7 +9,6 @@ import 'package:basics/presentation/widget_examples/widgets/hello_world.dart';
 import 'package:basics/presentation/widget_examples/widgets/layout_builder_example.dart';
 import 'package:basics/presentation/widget_examples/widgets/person.dart';
 import 'package:basics/presentation/widget_examples/widgets/row_expanded_example.dart';
-import 'package:basics/presentation/widget_examples/widgets/stevanus_picture.dart';
 import 'package:flutter/material.dart';
 
 class WidgetExamplesScreen extends StatelessWidget {
@@ -19,6 +20,7 @@ class WidgetExamplesScreen extends StatelessWidget {
         appBar: AppBar(
           centerTitle: true,
           title: const Text('Flutter Basics'),
+          backgroundColor: Colors.orange,
         ),
         body: Container(
           color: Colors.white,
@@ -43,7 +45,7 @@ class WidgetExamplesScreen extends StatelessWidget {
                   // const StevanusPicture(),
                   const Person(
                       pictureUrl:
-                          "https://media.licdn.com/dms/image/C5603AQHZpsvZV9mynA/profile-displayphoto-shrink_800_800/0/1634817830127?e=1707350400&v=beta&t=KS8qOqOQ0l9h8cz41IUzZcuqAmVq3zGrD2CSNGbqSIY",
+                          "https://media.sproutsocial.com/uploads/2022/06/profile-picture.jpeg",
                       name: "Evan",
                       age: "21",
                       country: "Indonesia",
@@ -69,7 +71,10 @@ class WidgetExamplesScreen extends StatelessWidget {
                   const SizedBox(height: 40),
                   CustomButton(
                     onTap: () {
-                      print('Tapped Button 2');
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const ScreenOne()));
                     },
                     icon: Icons.play_arrow,
                     iconColor: Colors.blue,
@@ -77,7 +82,10 @@ class WidgetExamplesScreen extends StatelessWidget {
                   const SizedBox(height: 40),
                   CustomButtonGesture(
                       onTap: () {
-                        print('Tapped Button Gesture');
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const ScreenTwo()));
                       },
                       text: "gesture button")
                 ]),
