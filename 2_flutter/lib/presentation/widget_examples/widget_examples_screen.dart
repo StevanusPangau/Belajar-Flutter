@@ -1,4 +1,5 @@
 import 'package:basics/08_widget_layout-builder.dart';
+import 'package:basics/application/theme_service.dart';
 import 'package:basics/presentation/components/custom_button.dart';
 import 'package:basics/presentation/widget_examples/widgets/another_picture.dart';
 import 'package:basics/presentation/widget_examples/widgets/button_examples.dart';
@@ -8,6 +9,7 @@ import 'package:basics/presentation/widget_examples/widgets/layout_builder_examp
 import 'package:basics/presentation/widget_examples/widgets/person.dart';
 import 'package:basics/presentation/widget_examples/widgets/row_expanded_example.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class WidgetExamplesScreen extends StatelessWidget {
   const WidgetExamplesScreen({super.key});
@@ -82,7 +84,10 @@ class WidgetExamplesScreen extends StatelessWidget {
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            debugPrint('FAB clicked');
+            // debugPrint('FAB clicked');
+
+            // ? mengubah tema menggunakan provider
+            Provider.of<ThemeService>(context, listen: false).toggleTheme();
           },
           child: const Icon(Icons.ac_unit),
         ));
