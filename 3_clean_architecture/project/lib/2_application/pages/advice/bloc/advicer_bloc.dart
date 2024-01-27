@@ -1,3 +1,4 @@
+import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -10,10 +11,10 @@ class AdvicerBloc extends Bloc<AdvicerEvent, AdvicerState> {
       emit(AdvicerStateLoading());
       // execute business logic
       debugPrint("Fake get advice triggered");
-      await Future.delayed(Duration(seconds: 3), () {});
+      await Future.delayed(const Duration(seconds: 3), () {});
       debugPrint("got advice");
-      // emit(AdvicerStateLoaded(advice: "Fake advice to test bloc"));
-      emit(AdvicerStateError(message: "Fake error to test bloc"));
+      emit(AdvicerStateLoaded(advice: "Fake advice to test bloc"));
+      // emit(AdvicerStateError(message: "Fake error to test bloc"));
     });
   }
 }

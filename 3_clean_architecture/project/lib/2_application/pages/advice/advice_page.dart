@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:project/2_application/core/services/theme_service.dart';
-import 'package:project/2_application/pages/advice/bloc/advicer_bloc.dart';
-import 'package:project/2_application/pages/advice/widgets/advice_field.dart';
-import 'package:project/2_application/pages/advice/widgets/custom_button.dart';
-import 'package:project/2_application/pages/advice/widgets/error_message.dart';
 import 'package:provider/provider.dart';
+
+import '../../core/services/theme_service.dart';
+// import 'bloc/advicer_bloc.dart'; // ! BlocBuilder
+import 'cubit/advicer_cubit.dart';
+import 'widgets/advice_field.dart';
+import 'widgets/custom_button.dart';
+import 'widgets/error_message.dart';
 
 class AdvicerPageWrapperProvider extends StatelessWidget {
   const AdvicerPageWrapperProvider({super.key});
@@ -13,7 +15,8 @@ class AdvicerPageWrapperProvider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => AdvicerBloc(),
+      // create: (context) => AdvicerBloc(), // ! BlocBuilder
+      create: (context) => AdvicerCubit(), // ! CubitBuilder
       child: const AdvicerPage(),
     );
   }
@@ -43,7 +46,11 @@ class AdvicerPage extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 50),
         child: Column(children: [
-          Expanded(child: Center(child: BlocBuilder<AdvicerBloc, AdvicerState>(
+          // ! BlocBuilder
+          // Expanded(child: Center(child: BlocBuilder<AdvicerBloc, AdvicerState>(
+          // ! CubitBuilder
+          Expanded(
+              child: Center(child: BlocBuilder<AdvicerCubit, AdvicerCubitState>(
             builder: (context, state) {
               if (state is AdvicerInitial) {
                 return Text("Your Advice is waiting for you",
