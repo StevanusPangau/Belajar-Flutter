@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:project/injection.dart';
 import 'package:provider/provider.dart';
 
 import '../../core/services/theme_service.dart';
@@ -16,7 +17,8 @@ class AdvicerPageWrapperProvider extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       // create: (context) => AdvicerBloc(), // ! BlocBuilder
-      create: (context) => AdvicerCubit(), // ! CubitBuilder
+      // create: (context) => AdvicerCubit(), // ! CubitBuilder
+      create: (context) => sl<AdvicerCubit>(), // ! CubitBuilder
       child: const AdvicerPage(),
     );
   }

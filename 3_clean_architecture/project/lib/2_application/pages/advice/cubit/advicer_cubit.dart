@@ -12,8 +12,8 @@ const serverFailureMessage = 'Ups, API Error. Please try again later';
 const cacheFailureMessage = 'Ups, Cache failed. Please try again later';
 
 class AdvicerCubit extends Cubit<AdvicerCubitState> {
-  AdvicerCubit() : super(AdvicerInitial());
-  final AdviceUseCases adviceUseCases = AdviceUseCases();
+  final AdviceUseCases adviceUseCases;
+  AdvicerCubit({required this.adviceUseCases}) : super(AdvicerInitial());
   // ? bisa juga memakai usecase lain
 
   // ? di Cubit kita harus membuat method sendiri untuk request event

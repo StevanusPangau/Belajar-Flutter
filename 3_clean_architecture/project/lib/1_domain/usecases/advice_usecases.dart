@@ -1,14 +1,15 @@
 import 'package:dartz/dartz.dart';
-import 'package:project/0_data/repositories/advice_repo_impl.dart';
 import 'package:project/1_domain/entities/advice_entity.dart';
 import 'package:project/1_domain/failures/failures.dart';
+import 'package:project/1_domain/repositories/advice_repo.dart';
 
 class AdviceUseCases {
   // function ini untuk mengambil data dari API dan mengembalikan data berupa Either<Failure, AdviceEntity>
   // ? Failure adalah class yang berisi error yang mungkin terjadi pada aplikasi (left side)
   // ? AdviceEntity adalah class yang berisi data dari API yang berbeda tipe data (right side)
 
-  final adviceRepo = AdviceRepoImpl();
+  AdviceUseCases({required this.adviceRepo});
+  final AdviceRepo adviceRepo;
 
   Future<Either<Failure, AdviceEntity>> getAdvice() async {
     // // call a repository to get data (Failure or data)

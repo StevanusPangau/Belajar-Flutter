@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:project/2_application/core/services/theme_service.dart';
 import 'package:project/2_application/pages/advice/advice_page.dart';
+import 'package:project/injection.dart' as di;
 import 'package:project/theme.dart';
 import 'package:provider/provider.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await di.init();
   runApp(ChangeNotifierProvider(
     create: (context) => ThemeService(),
     child: const MyApp(),
